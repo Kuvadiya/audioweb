@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Filed.com</title>
+  </head>
+  <body>
+    <h1>Songs, Audiobooks, Podcasts</h1>
+    <div>
+        <a href="song">Songs</a>
+        <a href="create/song" style="color:black;">Create</a>
+        {% for song in songs %}
+        <div>
+            <a href="song/{{ song.id }}">{{ song.name }}</a>
+            <div>
+            <a href="update/song/{{ song.id }}" style="color:green;">Update</a>
+            <a href="delete/song/{{ song.id }}" style="color:red;">Delete</a>
+            </div>
+            <br>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <br>
+        <a href="audiobook">Audiobooks</a>
+        <a href="create/audiobook" style="color:black;">Create</a>
+        {% for ab in audiobooks %}
+        <div>
+            <a href="audiobook/{{ ab.id }}">{{ ab.name }}</a>
+            <a href="update/audiobook/{{ ab.id }}" style="color:green;">Update</a>
+            <a href="delete/audiobook/{{ ab.id }}" style="color:red;">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div>
+        <br>
+        <a href="podcast">Podcasts</a>
+        <a href="create/podcast" style="color:black;">Create</a>
+        {% for pd in podcasts %}
+        <div>
+            <a href="song/{{ pd.id }}">{{ pd.name }}</a>
+            <a href="update/podcast/{{ pd.id }}" style="color:green;">Update</a>
+            <a href="delete/podcast/{{ pd.id }}" style="color:red;">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+  </body>
+</html>
